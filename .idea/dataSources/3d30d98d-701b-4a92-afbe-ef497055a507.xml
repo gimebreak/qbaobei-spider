@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="qbaobei@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.4">
+    <root id="1"/>
+    <schema id="2" parent="1" name="qbaobei">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="cookbook"/>
+    <schema id="4" parent="1" name="information_schema"/>
+    <schema id="5" parent="1" name="mysql"/>
+    <schema id="6" parent="1" name="performance_schema"/>
+    <schema id="7" parent="1" name="sys"/>
+    <schema id="8" parent="1" name="jiajia_spider"/>
+    <table id="9" parent="2" name="jiajia_spider_article"/>
+    <table id="10" parent="2" name="jiajia_spider_article_huaiyun"/>
+    <table id="11" parent="2" name="jiajia_spider_article_tag_rel"/>
+    <table id="12" parent="2" name="jiajia_spider_food_step"/>
+    <table id="13" parent="2" name="jiajia_spider_tag"/>
+    <table id="14" parent="2" name="jiajia_spider_url"/>
+    <column id="15" parent="9" name="id">
+      <Position>1</Position>
+      <DataType>int(10) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="16" parent="9" name="type">
+      <Position>2</Position>
+      <Comment>文章类型：1: 普通文章 2. 菜谱</Comment>
+      <DataType>tinyint(3) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="17" parent="9" name="title">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="18" parent="9" name="description">
+      <Position>4</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="19" parent="9" name="material">
+      <Position>5</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="20" parent="9" name="content">
+      <Position>6</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="21" parent="9" name="source">
+      <Position>7</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="22" parent="9" name="url">
+      <Position>8</Position>
+      <DataType>varchar(1024)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="23" parent="9" name="url">
+      <ColNames>url</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="24" parent="9" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="25" parent="9" name="url">
+      <ColNames>url</ColNames>
+      <UnderlyingIndexName>url</UnderlyingIndexName>
+    </key>
+    <column id="26" parent="10" name="id">
+      <Position>1</Position>
+      <DataType>int(10) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="27" parent="10" name="type">
+      <Position>2</Position>
+      <Comment>文章类型：1: 普通文章 2. 菜谱</Comment>
+      <DataType>tinyint(3) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="28" parent="10" name="title">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="29" parent="10" name="description">
+      <Position>4</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="30" parent="10" name="material">
+      <Position>5</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="31" parent="10" name="content">
+      <Position>6</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="32" parent="10" name="source">
+      <Position>7</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="33" parent="10" name="url">
+      <Position>8</Position>
+      <DataType>varchar(1024)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="34" parent="10" name="url">
+      <ColNames>url</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="35" parent="10" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="36" parent="10" name="url">
+      <ColNames>url</ColNames>
+      <UnderlyingIndexName>url</UnderlyingIndexName>
+    </key>
+    <column id="37" parent="11" name="id">
+      <Position>1</Position>
+      <DataType>int(10) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="38" parent="11" name="articleid">
+      <Position>2</Position>
+      <DataType>int(10) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="39" parent="11" name="tagid">
+      <Position>3</Position>
+      <DataType>int(10) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="40" parent="11" name="articleid">
+      <ColNames>articleid</ColNames>
+    </index>
+    <index id="41" parent="11" name="tagid">
+      <ColNames>tagid</ColNames>
+    </index>
+    <key id="42" parent="11" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="43" parent="11" name="jiajia_spider_article_tag_rel_ibfk_1">
+      <ColNames>articleid</ColNames>
+      <RefSchemaName>qbaobei</RefSchemaName>
+      <RefTableName>jiajia_spider_article</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="44" parent="11" name="jiajia_spider_article_tag_rel_ibfk_2">
+      <ColNames>tagid</ColNames>
+      <RefSchemaName>qbaobei</RefSchemaName>
+      <RefTableName>jiajia_spider_tag</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="45" parent="12" name="id">
+      <Position>1</Position>
+      <DataType>int(10) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="46" parent="12" name="articleid">
+      <Position>2</Position>
+      <DataType>int(10) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="47" parent="12" name="step">
+      <Position>3</Position>
+      <DataType>tinyint(3) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="48" parent="12" name="image">
+      <Position>4</Position>
+      <DataType>varchar(1024)|0</DataType>
+    </column>
+    <column id="49" parent="12" name="detail">
+      <Position>5</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <index id="50" parent="12" name="articleid">
+      <ColNames>articleid</ColNames>
+    </index>
+    <key id="51" parent="12" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="52" parent="12" name="jiajia_spider_food_step_ibfk_1">
+      <ColNames>articleid</ColNames>
+      <RefSchemaName>qbaobei</RefSchemaName>
+      <RefTableName>jiajia_spider_article</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="53" parent="13" name="id">
+      <Position>1</Position>
+      <DataType>int(10) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="54" parent="13" name="name">
+      <Position>2</Position>
+      <DataType>varchar(1024)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="55" parent="13" name="type">
+      <Position>3</Position>
+      <Comment>标签类型：1. 食材大类 2. 食材小类 3. 日期大类 4. 日期小类 5. 功能 6. 推荐 7. 不推荐 8. 其他（默认）</Comment>
+      <DataType>tinyint(3) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="56" parent="13" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="57" parent="14" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="58" parent="14" name="url">
+      <Position>2</Position>
+      <Comment>完整url值</Comment>
+      <DataType>varchar(1024)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="59" parent="14" name="hash">
+      <Position>3</Position>
+      <Comment>Hash值</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="60" parent="14" name="articleid">
+      <Position>4</Position>
+      <DataType>int(11) unsigned|0</DataType>
+    </column>
+    <index id="61" parent="14" name="articleid">
+      <ColNames>articleid</ColNames>
+    </index>
+    <index id="62" parent="14" name="hash">
+      <ColNames>hash</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="63" parent="14" name="url">
+      <ColNames>url</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="64" parent="14" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="65" parent="14" name="url">
+      <ColNames>url</ColNames>
+      <UnderlyingIndexName>url</UnderlyingIndexName>
+    </key>
+    <key id="66" parent="14" name="hash">
+      <ColNames>hash</ColNames>
+      <UnderlyingIndexName>hash</UnderlyingIndexName>
+    </key>
+    <foreign-key id="67" parent="14" name="jiajia_spider_url_ibfk_1">
+      <ColNames>articleid</ColNames>
+      <RefSchemaName>qbaobei</RefSchemaName>
+      <RefTableName>jiajia_spider_article</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+  </database-model>
+</dataSource>
